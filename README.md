@@ -27,3 +27,10 @@ This JavaScript sample code to integrate the Sitecore CDP tp collect the data fr
   -function is used to add search text to CDP
   # CollectPageView : 
   -function is used to save page view event to CDP
+  # Sample decision-model to identify most visited product category from Ordercloud headstart and recommonded the most viewd products of that category 
+  -  Create a connection to Ordercloud service which will return the products on basis of category.
+  - Create the experience to rendered the product listing
+  - https://app.boxever.com/#/decision-models/0443b582-9da7-49e4-961e-bed8fde8742a/d8644811-3ff6-451d-9363-0d2cd3d0b73b
+  - https://app.boxever.com/#/connections/list?updatedBy=%5B%22c6887c89-6f0f-4e5c-8ed6-ff630f6d5b3a%22%5D&orderedBy=last%20updated
+  - https://app.boxever.com/#/experiences/web/7c0093b2-1681-4871-9090-ccb3cd026d1e?section=build
+  
