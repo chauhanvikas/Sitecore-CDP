@@ -1,0 +1,186 @@
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" namespace="http://camunda.org/schema/1.0/dmn" name="definitions" id="definitions"><decision id="ad347e6a-bd7d-4d1c-86f5-3e52aa85ac9f" name="GSPOrdercloudB2C"><extensionElements><biodi:bounds x="750" y="190" width="200" height="73.3"/><biodi:edge source="a262da95-9d17-48c2-9087-2ecc9ef2c69f"/></extensionElements><variable id="variable66ecabe8-347a-4ad0-a8e8-e42f422d65fe" typeRef="map" name="gspordercloudb2c"/><informationRequirement><requiredDecision href="#a262da95-9d17-48c2-9087-2ecc9ef2c69f"/></informationRequirement><literalExpression expressionLanguage="web-service" id="literal66ecabe8-347a-4ad0-a8e8-e42f422d65fe"><text><![CDATA[{"clientKey":"psfu6uh05hsr9c34rptlr06dn864cqrx","href":"https://api-eu-west-1-production.boxever.com/v2/connections/9ca339e9-1d25-499b-aa30-85c6f571db9a","ref":"9ca339e9-1d25-499b-aa30-85c6f571db9a","name":"GSPOrdercloudB2C","description":"Get products based on Product category","modifiedByRef":"c6887c89-6f0f-4e5c-8ed6-ff630f6d5b3a","modifiedAt":"2022-06-08T08:54:32.622Z","revision":1,"archived":false,"auth":{"authType":"NONE"},"request":{"requestType":"GET","connectionUrl":"https://b2bheadstart.dna2.hclets.com/me/productsbycategory?categoryID=${categoryID}"},"inputMappings":[],"outputMappings":[{"label":"Items","outputReference":"Items","type":"Array"},{"label":"Meta","outputReference":"Meta","type":"Object"}],"customHeaders":[{"name":"Accept","value":"application/json"},{"name":"Accept-Encoding","value":"gzip"}],"urlParameters":[{"label":"categoryID","key":"categoryID","type":"string","exampleValue":"Beauty-and-Fitness","mapping":"programmable1","data":{"type":"Programmables","label":"Programmable 1","value":"programmable1","dataType":"string","firstInGroup":true}}],"systemType":"DATA_SYSTEM","connectionTimeout":1000,"socketTimeout":1000,"icon":"fad fa-chart-network"}]]></text></literalExpression></decision><decision id="a5200494-0347-4ab9-8252-3adef95aadab" name="Decision Table 1"><extensionElements><biodi:bounds x="930" y="10" width="200" height="73.3"/><biodi:edge source="e1b98d10-5593-466e-9a2b-d221ab45ad03"/><biodi:edge source="b7394443-abfd-4f4a-b281-d397110f3c94"/></extensionElements><informationRequirement><requiredDecision href="#e1b98d10-5593-466e-9a2b-d221ab45ad03"/></informationRequirement><authorityRequirement><requiredAuthority href="#b7394443-abfd-4f4a-b281-d397110f3c94"/></authorityRequirement><decisionTable hitPolicy="UNIQUE"><input id="string77dd88f3-a347-458b-b0bc-a55cd8aa214a" label="name" camunda:inputVariable=""><inputExpression typeRef="string"><text>programmable2</text></inputExpression></input><output id="stringf731d31b-5a83-4c6a-865a-aba81bd84bb0" label="GSP-Banner-Personalization" name="banneroffer" typeRef="com.boxever.offer" biodi:offerTemplateRef="d120f431-79c6-47d8-bafd-fef7ccb5804c"/><rule id="DecisionTable1_0"><inputEntry id="input552d7be2-37cb-4f88-be24-559f8299bf37"><text><![CDATA["Dwell Electric Toothbrush"]]></text></inputEntry><outputEntry id="outpute41f36c3-f3c0-411b-a0fd-dce86e5c60cc"><text><![CDATA["38ae9ca6-ad86-407a-af9a-8db899c09dd7"]]></text></outputEntry></rule><rule id="DecisionTable1_1"><inputEntry id="inputbe160f65-2f23-4abe-902d-467326f87eba"><text><![CDATA[]]></text></inputEntry><outputEntry id="output29f588f3-757d-4c30-9cfb-f1049fca8e0e"><text><![CDATA[]]></text></outputEntry></rule></decisionTable></decision><inputData id="c65a64b8-bdb0-4749-bd55-a53b462cbf5c" name="Guest"><extensionElements><biodi:bounds x="280" y="320" width="200" height="73.3"/></extensionElements></inputData><inputData id="d6f4f13f-2c27-41b0-8ea7-f0225da9fb22" name="Sessions"><extensionElements><biodi:bounds x="640" y="350" width="200" height="73.3"/></extensionElements></inputData><knowledgeSource id="b7394443-abfd-4f4a-b281-d397110f3c94" name="Offers"><extensionElements><biodi:bounds x="1070" y="230" width="200" height="73.3"/></extensionElements></knowledgeSource><decision id="a262da95-9d17-48c2-9087-2ecc9ef2c69f" name="Programmable 1"><extensionElements><biodi:bounds x="470" y="104" width="200" height="73.3"/><biodi:edge source="d6f4f13f-2c27-41b0-8ea7-f0225da9fb22"/><biodi:edge source="c65a64b8-bdb0-4749-bd55-a53b462cbf5c"/></extensionElements><variable id="variable1637573675833" typeRef="string" name="programmable1"/><informationRequirement><requiredInput href="#d6f4f13f-2c27-41b0-8ea7-f0225da9fb22"/></informationRequirement><informationRequirement><requiredInput href="#c65a64b8-bdb0-4749-bd55-a53b462cbf5c"/></informationRequirement><literalExpression id="literal1637573675833" expressionLanguage="javascript"><text><![CDATA[(function () {
+ 
+ var daysToAgeOutSession = "[[Number of days to include in page view calculations | Number]]"
+    print(daysToAgeOutSession);
+    var page1 = "[[Page One name | String]]"
+    var page2 = "[[Page Two Name | String]]"
+    var page3 = "[[Page Three Name | String]]"
+    var page4 = "[[Page Four Name | String]]"
+ 
+  
+    
+    var pageCounters = {
+        page1count: 0,
+        page2count: 0,
+        page3count: 0,
+        page4count: 0,
+       // page5count: 0
+      
+    }
+    //function to return a list of the top pages that were viewed 
+    function getMaxPageViewed() {
+        maxList = [];
+        max = 0;
+        for (const page in pageCounters) {
+            if (pageCounters[page] > max) {
+                maxList = [];
+                maxList.push(page);
+                max = pageCounters[page];
+            }
+            else if (pageCounters[page] == max) {
+                maxList.push(page);
+            }
+        }
+        return maxList;
+    }
+    
+function GetPageName(pagename) 
+ {
+	var  myArray;
+	var cArray;
+	var category;
+	var c;
+	var text = pagename;
+	if(text.indexOf('?')>-1)
+	{
+		if(text.indexOf("&")>-1)
+		 myArray = text.split("&", 3);
+		else
+		 myArray = text.split("?", 3);
+
+		for(var i=0;i<myArray.length;i++)
+		{
+		  if(myArray[i].indexOf("categoryID")>-1)
+		  {
+			if(myArray[i].indexOf("?")>-1)
+			{
+			  let a= myArray[i].split("?", 3);
+				 
+			   let cc=a.split("=", 3);
+			   c=cc[1];
+			}
+			else
+			{
+			  cArray= myArray[i].split("=", 3);
+			   c=cArray[i]
+			}
+		   
+		  }
+		}
+	}
+	else
+	{
+	c=text;
+	}
+	return c;
+}
+    //return the most viewed page from the maxList
+    function getMostViewedPage() {
+        var maxPage = getMaxPageViewed(); 
+        var mostViewedPageValue;
+        //if there is only one max page value in the list return it.
+        if ( maxPage.length == 1 ) {
+            return maxPage[0]
+        }
+        //if all 4 values appear in the list it means none of the pages were viewed so return a default value
+        else if ( maxPage.length == 4 ) {
+            return "default"
+        }
+        //if more than 1 page in the list get the last one that was viewed by iterating through sessions.
+        else {
+            for (var i = 0; i < guest.sessions.length; i++) {
+                var currentSession = guest.sessions[i];
+                for (var j = 0; j < currentSession.events.length; j++) {
+                    var currentEvent = currentSession.events[j];
+                    if (currentEvent.type === "VIEW" && currentEvent.arbitraryData) {
+                         print("Mostviewed");
+                         print(GetPageName(currentEvent.arbitraryData.page));
+                        switch (GetPageName(currentEvent.arbitraryData.page)) {
+                            case page1: return "page1count";break;
+                            case page2: return "page2count";break;
+                            case page3: return "page3count";break;
+                            case page4: return "page4count";break;
+                            //case page5: return "page5count";break;
+                           
+                        }
+                       
+                        
+                    }                                                                                                                                      
+                }  
+            }
+        }
+    }
+    //function to get the view events from guests session exluding any before the date and increment the page counters.
+    function getPageFrequencies() {
+        //date to exclude sessions before
+        var ageOutSessionsDate = new Date(new Date().setDate(new Date().getDate() - daysToAgeOutSession));
+        
+        for (var i = 0; i < guest.sessions.length; i++) {
+            var currentSession = guest.sessions[i];
+            if (Date.parse(currentSession.createdAt) < ageOutSessionsDate) {
+                break;
+            }
+            for (var j = 0; j < currentSession.events.length; j++) {
+                var currentEvent = currentSession.events[j];
+                // If current page view is equal to the page to check increment counter
+                if (currentEvent.type === "VIEW" && currentEvent.arbitraryData){
+                     print("frequency");
+                     print(GetPageName(currentEvent.arbitraryData.page));
+                    switch (GetPageName(currentEvent.arbitraryData.page)) {
+                        case page1: pageCounters["page1count"]++;break;
+                        case page2: pageCounters["page2count"]++;break;
+                        case page3: pageCounters["page3count"]++;break;
+                        case page4: pageCounters["page4count"]++;break;
+                       // case page5: pageCounters["page5count"]++;break;
+                        
+                    }
+                }
+               
+            }
+        }
+    }
+    
+    getPageFrequencies();
+    var mostViewedPageCountValue = getMostViewedPage();
+    print(mostViewedPageCountValue);
+    var mostViewedPage ="";
+    switch (mostViewedPageCountValue) {
+        case "page1count": mostViewedPage = page1; break;
+        case "page2count": mostViewedPage = page2; break;
+        case "page3count": mostViewedPage = page3; break;
+        case "page4count": mostViewedPage = page4; break;
+     //   case "page5count": mostViewedPage = page5; break;
+      
+    }
+    
+
+    return mostViewedPage;
+    
+ 
+ 
+})();]]></text></literalExpression></decision><decision id="e1b98d10-5593-466e-9a2b-d221ab45ad03" name="Programmable 2"><extensionElements><biodi:bounds x="885" y="350" width="200" height="73.3"/><biodi:edge source="ad347e6a-bd7d-4d1c-86f5-3e52aa85ac9f"/></extensionElements><variable id="variable1655294674991" typeRef="map" name="programmable2"/><informationRequirement><requiredDecision href="#ad347e6a-bd7d-4d1c-86f5-3e52aa85ac9f"/></informationRequirement><literalExpression id="literal1655294674991" expressionLanguage="javascript"><text><![CDATA[(function () {
+  // Add statements here
+  
+    var product = [];
+     var item = {};
+    for(var j = 0; j < gspordercloudb2c.Items.length; j++)
+        {
+            //get category for each item
+            
+             item ["name"] =  gspordercloudb2c.Items[j].Name;
+            item ["imageurl"] =  gspordercloudb2c.Items[j].xp.Images[0].Url;
+            item ["productId"] =  gspordercloudb2c.Items[j].PriceSchedule.ID;
+             item ["desc"] =  gspordercloudb2c.Items[j].Description;
+              item ["price"] =  gspordercloudb2c.Items[j].PriceSchedule.PriceBreaks[0].Price;
+           //var DisplayName = gspGetProductRecommendation.result[j].Name;
+              product.push(item);
+              if(j===0)
+              break;
+            
+        }
+   
+     print(JSON.stringify(product));
+   
+
+ return item;
+})();]]></text></literalExpression></decision></definitions>
