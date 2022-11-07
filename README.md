@@ -16,17 +16,17 @@ This JavaScript sample code to integrate the Sitecore CDP tp collect the data fr
   # AddUpdateExtendedField :
   - function is used to extension field to Sitecore CDP
   # SubscribeUserRegistration : 
-  -function is used to save the Registered user data and identify the user
+  - function is used to save the Registered user data and identify the user
   # AddLocationTosession : 
-  -Function is used to add geo data and Geo location service needs tob integrate
+  - Function is used to add geo data and Geo location service needs tob integrate
   # AddItemtoCart : 
-  -function is used for to add product detail to CDP when user add prodcuts in Cart.
+  - function is used for to add product detail to CDP when user add prodcuts in Cart.
   # Checkout : 
-  -function is used to add checkout event
+  - function is used to add checkout event
   # Search : 
-  -function is used to add search text to CDP
+  - function is used to add search text to CDP
   # CollectPageView : 
-  -function is used to save page view event to CDP
+  - function is used to save page view event to CDP
   # Sample decision-model to identify most visited product category from Ordercloud headstart and recommonded the most viewd products of that category 
   -  Create a connection to Ordercloud service which will return the products on basis of category.
   - Create the experience to rendered the product listing
