@@ -4,7 +4,7 @@ Sitecore CDP Examples code and the Sitecore CDP Integration Starter Kit This Ja
 
 # window.mobileCheck 
 - Function has been used to detect the device.
-# SitecoreCDPVariable : To declared the required parameters like
+# SitecoreCDPVariable : To declared the required parameters to connect Sitecore CDP and target website
   -  _client_key: "",    _target: "https://api.boxever.com/v1.2",
   -  _cookie_domain: "",
   -  _pointOfSale: "Demo",
