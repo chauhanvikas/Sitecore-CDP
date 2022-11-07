@@ -1,7 +1,7 @@
 # Sitecore-CDP
 
-Sitecore CDP Integration Starter Kit and Samples
-This JavaScript sample code to integrate the Sitecore CDP tp collect the data from any website Like page view , form submmition , Add extension field, Add to cart event and etc
+Sitecore CDP Examples code and the Sitecore CDP Integration Starter Kit This JavaScript sample code integrates the Sitecore CDP to gather information from any website, including page views, form submissions, add-on fields, add-to-cart events, and more.
+
 # window.mobileCheck 
 - Function has been used to detect the device.
 # SitecoreCDPVariable : To declared the required parameters like
