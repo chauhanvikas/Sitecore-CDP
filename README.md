@@ -33,4 +33,8 @@ This JavaScript sample code to integrate the Sitecore CDP tp collect the data fr
   - https://app.boxever.com/#/decision-models/0443b582-9da7-49e4-961e-bed8fde8742a/d8644811-3ff6-451d-9363-0d2cd3d0b73b
   - https://app.boxever.com/#/connections/list?updatedBy=%5B%22c6887c89-6f0f-4e5c-8ed6-ff630f6d5b3a%22%5D&orderedBy=last%20updated
   - https://app.boxever.com/#/experiences/web/7c0093b2-1681-4871-9090-ccb3cd026d1e?section=build
+
+# An example decision-model and full implementation of how to give a personalised product recommendation based on user interest as determined by website form submission
+ - https://app.boxever.com/#/experiences/full-stack/e2d24b3f-f964-410a-b113-d25dedeab20a?section=build
+ - https://app.boxever.com/#/decision-models/851a5a9a-72eb-4a46-b1af-badb2847c09f/103c5e73-f253-42f6-af43-36ea3c5c5843
   
